@@ -2,6 +2,7 @@
   "imports": {
     "event-edge/common/": "../common/",
     "event-edge/ee-store/": "../ee-store/",
+    "$flowbite/": "https://deno.land/x/fresh_flowbite@1.0.0-1.6.3/",
     "$fresh/": "https://deno.land/x/fresh@1.1.3/",
     "preact": "https://esm.sh/preact@10.11.0",
     "preact/": "https://esm.sh/preact@10.11.0/",

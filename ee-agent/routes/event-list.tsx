@@ -30,7 +30,7 @@ export default function (props: PageProps<Data>) {
       <Head>
         <title>Event List</title>
       </Head>
-      <div class='p-4 mx-auto max-w-screen-md'>
+      <div class='p-4 mx-auto max-w-screen-xl'>
         <EventList data={props.data} />
       </div>
     </>
