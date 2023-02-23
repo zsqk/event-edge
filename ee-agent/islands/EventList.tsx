@@ -37,7 +37,6 @@ export default function EventList(props: EventListProps) {
       }
       next = new Date(nextTime).toLocaleString();
     }
-    console.log("v.updatedAt", v.updatedAt, typeof v.updatedAt);
     return (
       <tr key={v.num}>
         <td>{v.num}</td>

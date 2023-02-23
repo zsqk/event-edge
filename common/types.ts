@@ -59,6 +59,26 @@ export enum EventEdgeState {
   以超时结束 = 'timeout',
 }
 
+export function isEventEdgeState(v: unknown): v is EventEdgeState {
+  if (Object.values(EventEdgeState).includes(v as any)) {
+    return true;
+  }
+  return false;
+}
+
+export function isEventEdgeType(v: unknown): v is EventEdge['type'] {
+  if (
+    v === 'test' ||
+    v === 'network-monitor' ||
+    v === 'postgresql-monitor' ||
+    v === 'https-monitor' ||
+    v === 'exec'
+  ) {
+    return true;
+  }
+  return false;
+}
+
 /**
  * 边缘处理事件
  * @author Lian Zheren <lzr@zsqk.com.cn>
