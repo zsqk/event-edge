@@ -1,15 +1,15 @@
-import { EventEdge } from "event-edge/common/types.ts";
+import { EventEdge } from 'event-edge/common/types.ts';
 import {
   EVENT_EDGE_TABLE_MAP,
   EVENT_EDGE_TABLE_NAME,
-} from "event-edge/ee-store/constant.ts";
-import { sql } from "../db.ts";
+} from 'event-edge/ee-store/constant.ts';
+import { sql } from '../db.ts';
 
 /**
  * [数据接口] 获取 event
  */
 export async function getEvents<K extends keyof EventEdge>(
-  keys: K[]
+  keys: K[],
 ): Promise<Pick<EventEdge, K>[]> {
   const res = await sql`
 SELECT
@@ -44,7 +44,7 @@ LIMIT 10`;
  */
 function select<T>(k: (keyof T)[], m: Record<keyof T, { k: string }>) {
   return k.reduce((pre, v, i) => {
-    if (typeof v !== "string") {
+    if (typeof v !== 'string') {
       return pre;
     }
     const sqlname = m[v].k;
